@@ -5,7 +5,7 @@ import NavBar from "./components/NavBar";
 function App() {
   return (
     <>
-      <NavBar title="Textinsider" aboutText="there is about u" />
+      <NavBar />
     </>
   );
 }
