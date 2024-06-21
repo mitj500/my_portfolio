@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 export default function TextForm(props) {
+  const [text, setText] = useState(" ");
   const handleUpClick = () => {
     console.log("clicked" + text);
     let newText = text.toUpperCase();
@@ -16,25 +17,11 @@ export default function TextForm(props) {
     setText(event.target.value);
   };
 
-  const [text, setText] = useState(" ");
-
-  const HighlightAdjectives = () => {
-    const [text, setText] = useState('The quick brown fox jumps over the lazy dog');
-  
-    const highlightAdjectives = () => {
-      const words = text.split(' ');
-      const adjectiveRegex = /\b(?:quick|brown|lazy)\b/g; // Add more adjectives as needed
-  
-      const highlightedSentence = words.map((word, index) => (
-        adjectiveRegex.test(text) ? <span key={index} style={{ backgroundColor: 'yellow' }}>{text}</span> : <span key={index}>{text}</span>
-      ));
-  
-      return highlightedSentence;
-    };
-
   return (
     <>
-      <div className="container">
+
+    
+<div className="container">
         <h1>{props.heading}</h1>
         <div className="mb-3">
           <label for="myBox" className="form-label">
@@ -57,9 +44,6 @@ export default function TextForm(props) {
           make it lowercase
         </button>
         <div>
-      <div>{highlightAdjectives()}</div>
-      <button onClick={highlightAdjectives}>Highlight Adjectives</button>
-    </div>
       </div>
       <div className="container my-2">
         <h1>your text summary</h1>
@@ -71,6 +55,7 @@ export default function TextForm(props) {
         <h2>preview</h2>
         <p>{text}</p>
       </div>
+        </div>
     </>
   );
 }
