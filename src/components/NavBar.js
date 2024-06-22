@@ -1,10 +1,12 @@
 import React from "react";
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 
 export default function NavBar(props) {
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav
+        className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}
+      >
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
             {props.title}
@@ -70,15 +72,29 @@ export default function NavBar(props) {
               </li>
             </ul>
             <form className="d-flex" role="search">
-              <input
+              {/* <input
                 className="form-control me-2"
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
-              />
-              <button className="btn btn-primary" type="submit">
+              /> */}
+              <div className={`form-check form-switch text-${props.mode==='light'?'grey':'light'}`}>
+                <input
+                  className="form-check-input"  onClick={props.toggleMode}
+                  type="checkbox"
+                  role="switch"
+                  id="flexSwitchCheckDefault"
+                />
+                <label
+                  className="form-check-label"
+                  htmlFor="flexSwitchCheckDefault"
+                >
+                  Dark Mode
+                </label>
+              </div>
+              {/* <button className="btn btn-primary" type="submit">
                 Search
-              </button>
+              </button> */}
             </form>
           </div>
         </div>
@@ -88,11 +104,11 @@ export default function NavBar(props) {
 }
 
 NavBar.propTypes = {
-    title: PropTypes.string.isRequired,
-    aboutText: PropTypes.string
-}
+  title: PropTypes.string.isRequired,
+  aboutText: PropTypes.string,
+};
 
-NavBar.defaultProps={
-    title: "My App",
-    aboutText: "About"
-}
+NavBar.defaultProps = {
+  title: "My App",
+  aboutText: "About",
+};

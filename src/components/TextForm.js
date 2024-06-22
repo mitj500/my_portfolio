@@ -21,21 +21,21 @@ export default function TextForm(props) {
     <>
 
     
-<div className="container">
+<div className="container style={{Color:props.mode==='dark'?'grey':'black'}}  ">
         <h1>{props.heading}</h1>
         <div className="mb-3">
           <label for="myBox" className="form-label">
             Example textarea
           </label>
-          <textarea
+          <textarea 
             className="form-control"
             value={text}
             onChange={handleOnChange}
             id="myBox"
-            rows="8"
+            rows="8" style={{backgroundColor:props.mode==='dark'?'grey':'light',Color:props.mode==='dark'?'grey':'black '}}
           ></textarea>
         </div>
-        <button className="btn btn-primary mx-2" onClick={handleUpClick}>
+        <button className="btn btn-primary mx-2" onClick={handleUpClick} >
           {" "}
           make it uppercase
         </button>
@@ -43,9 +43,7 @@ export default function TextForm(props) {
           {" "}
           make it lowercase
         </button>
-        <div>
-      </div>
-      <div className="container my-2">
+      <div className="container my-2 style={{backgroundColor:props.mode==='dark'?'grey':'light',Color:props.mode==='dark'?'grey':'black '}}" >
         <h1>your text summary</h1>
         <p>
           your words are {text.split(" ").length} of the text is {text.length}{" "}
