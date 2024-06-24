@@ -14,14 +14,14 @@ export default function About() {
       SetMyStyle({
         color: "black",
         backgroundColor: "white",
-        border: "1px solid black",
+        // border: "1px solid black",
       });
       setbtnText("Enable dark mode");
     } else {
       SetMyStyle({
         color: "white",
         backgroundColor: "black",
-        border: "1px solid white",
+        // border: "1px solid white",
       });
       setbtnText("Enable light mode");
     }
