@@ -9,7 +9,6 @@ import {
   Route,
   Routes,
   Switch,
-  Link,
 } from "react-router-dom";
 
 function App() {
