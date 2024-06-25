@@ -9,9 +9,9 @@ export default function NavBar(props) {
         className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}
       >
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
+          <Link className="navbar-brand" to="/">
             {props.title}
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -31,11 +31,11 @@ export default function NavBar(props) {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/">
+                <Link className="nav-link" to="/about">
                   {props.aboutText}
                 </Link>
               </li>
-              <li className="nav-item dropdown">
+              {/* <li className="nav-item dropdown">
                 <a
                   className="nav-link dropdown-toggle"
                   href="#"
@@ -44,13 +44,8 @@ export default function NavBar(props) {
                   aria-expanded="false"
                 >
                   Dropdown
-                </a>
-                <ul className="dropdown-menu">
-                  <li>
-                    <a className="dropdown-item" href="#">
-                      Action
-                    </a>
-                  </li>
+                </a> */}
+                {/* <ul className="dropdown-menu">
                   <li>
                     <a className="dropdown-item" href="#">
                       Another action
@@ -65,12 +60,12 @@ export default function NavBar(props) {
                     </a>
                   </li>
                 </ul>
-              </li>
-              <li className="nav-item">
+              </li> */}
+              {/* <li className="nav-item">
                 <a className="nav-link disabled" aria-disabled="true">
                   Disabled
                 </a>
-              </li>
+              </li> */}
             </ul>
             <form className="d-flex" role="search">
               {/* <input
